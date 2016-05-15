@@ -1,4 +1,9 @@
-## Loading the data
+# Download and unzip the data
+fileUrl = "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+download.file(fileUrl, destfile = "./household_power_consumption.zip",mode="wb")
+unzip("household_power_consumption.zip")
+
+# Loading the data
 household <- read.table("household_power_consumption.txt", header=TRUE, sep =";", na.strings ="?")
 # Transform
 household$Date <- as.Date(household$Date,"%d/%m/%Y")
